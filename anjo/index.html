@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="description" content="Descrição">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Oração Divina">
+  <meta property="og:description" content="Descrição">
+  <title>Oração Divina</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400|Roboto:400,300|Montserrat:600&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Base styles */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: Roboto, sans-serif;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    *, ::after, ::before {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    a {
+      color: inherit;
+      text-decoration: inherit;
+    }
+    
+    /* Typography */
+    .atomi-h1 { font-size: 36px; }
+    .atomi-h2 { font-size: 30px; }
+    .atomi-h3 { font-size: 24px; }
+    .atomi-h4 { font-size: 20px; }
+    .atomi-h5 { font-size: 18px; }
+    .atomi-h6 { font-size: 16px; }
+    
+    h1 { font-size: 2em; }
+    h1, h2, h3, h4, h5, h6 { font-weight: inherit; }
+    
+    /* Layout containers */
+    .atomicat-big-container {
+      word-wrap: break-word;
+      overflow-x: hidden;
+    }
+    
+    .atomicat-big-outer-container {
+      width: 100%;
+      margin: 0 auto;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      max-width: 100%;
+      position: relative;
+    }
+    
+    .atomicat-outer-container {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      max-width: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      height: 100%;
+      margin: 0 auto;
+    }
+    
+    .atomicat-container {
+      display: flex;
+      margin: 0 auto;
+      font-weight: 600;
+      min-height: 100%;
+      width: 100%;
+    }
+    
+    .atomicat-inner-container {
+      flex-direction: column;
+    }
+    
+    .atomicat-container-boxed > .atomicat-container {
+      max-width: 1140px;
+    }
+    
+    .atomicat-container-full-width > .atomicat-container {
+      max-width: 100%;
+    }
+    
+    /* Component containers */
+    .atomicat-component-container {
+      max-width: 100%;
+      min-width: 0;
+    }
+    
+    .atomicat-element-container {
+      max-width: 100%;
+    }
+    
+    .atomicat-relative {
+      position: relative;
+    }
+    
+    /* Image styles */
+    .atomicat-image {
+      overflow: hidden;
+      text-align: center;
+    }
+    
+    .atomicat-image img {
+      display: inline-block;
+      max-width: 100%;
+      max-height: 100%;
+      vertical-align: middle;
+    }
+    
+    /* Text styles */
+    .atomicat-text {
+      white-space: pre-line;
+    }
+    
+    .atomicat-text p {
+      font-size: 16px;
+      font-weight: 400;
+    }
+    
+    .atomicat-heading-title {
+      white-space: pre-line;
+      color: #000;
+      font-family: Poppins, sans-serif;
+    }
+    
+    .atomicat-heading-title h1 {
+      font-size: 48px;
+      font-weight: 700;
+    }
+    
+    .atomicat-heading-title h2 {
+      font-size: 36px;
+      font-weight: 600;
+    }
+    
+    .atomicat-heading-title h3 {
+      font-size: 24px;
+      font-weight: 500;
+    }
+    
+    /* Video player styles */
+    .atomicat-video {
+      overflow: hidden;
+    }
+    
+    .atomicat-video iframe {
+      height: 100%;
+      width: 100%;
+    }
+    
+    .smartplayer-mobile-container {
+      margin: 0 auto;
+      width: 100%;
+      max-width: 400px;
+    }
+    
+    .smartplayer-headline {
+      text-align: center;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: fit-content;
+    }
+    
+    .smartplayer-headline div {
+      width: 100%;
+      margin: 0 0 24px;
+      font-family: Inter;
+      font-size: 1.33333em;
+      letter-spacing: 1px;
+      line-height: 150%;
+      text-align: left;
+    }
+    
+    /* Footer styles */
+    .footer-section {
+      background: #f4f4f4;
+      padding: 48px 0;
+    }
+    
+    .footer-text {
+      color: #222;
+      font-size: 16px;
+      text-align: center;
+      line-height: 24px;
+      margin-bottom: 16px;
+    }
+    
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .footer-link {
+      line-height: 16px;
+      color: #747474;
+      text-align: center;
+      font-size: 14px;
+    }
+    
+    .footer-divider {
+      font-weight: 300;
+      color: #747474;
+      text-align: center;
+    }
+    
+    /* Responsive styles */
+    @media screen and (max-width: 1024px) {
+      .atomicat-hidden-tablet {
+        display: none;
+      }
+    }
+    
+    @media screen and (max-width: 480px) {
+      .atomicat-container-boxed > .atomicat-container {
+        grid-template-columns: repeat(1, 1fr);
+      }
+      
+      .atomicat-hidden-mobile {
+        display: none;
+      }
+      
+      .atomicat-container {
+        flex-wrap: wrap;
+      }
+      
+      .footer-section {
+        padding: 32px 0;
+      }
+      
+      .footer-text {
+        font-size: 14px;
+        line-height: 16px;
+      }
+      
+      .footer-link {
+        font-size: 12px;
+      }
+    }
+  </style>
+  
+  
+  
+  <script
+  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+  data-utmify-prevent-xcod-sck
+  data-utmify-prevent-subids
+  async
+  defer
+></script>
+
+
+  <script>
+  window.pixelId = "67728340b21fd318aa01770a";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script>
+  
+  
+  
+</head>
+<body>
+  <div class="atomicat-big-container">
+    <!-- Header Section -->
+    <div class="atomicat-big-outer-container">
+      <div class="atomicat-outer-container atomicat-container-boxed">
+        <div class="atomicat-container atomicat-inner-container">
+          <div class="atomicat-big-outer-container" style="width: 100%;">
+            <div class="atomicat-outer-container atomicat-container-full-width">
+              <div class="atomicat-container atomicat-inner-container">
+                <div class="atomicat-component-container atomicat-relative">
+                  <div class="atomicat-element-container atomicat-relative atomicat-image">
+                    <img src="https://media.atomicatpages.net/u/fhSOeDcqOudeLRe4dqVr9TkkTiH2/Pictures/LYQzqn8031489.png" alt="Canção Nova Logo" loading="eager" decoding="async">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Date Counter Section -->
+    <div class="atomicat-big-outer-container">
+      <div class="atomicat-outer-container atomicat-container-boxed">
+        <div class="atomicat-container atomicat-inner-container">
+          <div class="atomicat-big-outer-container" style="width: 100%;">
+            <div class="atomicat-outer-container atomicat-container-full-width">
+              <div class="atomicat-container atomicat-inner-container">
+                <div class="atomicat-component-container atomicat-relative">
+                  <div class="atomicat-element-container atomicat-relative atomicat-text" style="margin-bottom: 1em; margin-top: 1em; text-align: center;">
+                    <p>Hoje é <span class="atomicat-hoje-ext" id="current-date">quinta-feira, 27 de março de 2025</span>, e <span class="atomicat-random" id="viewer-count">654</span> fiéis estão vendo esse programa de cura e Riqueza!</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Video Section -->
+   <div id="vid_67e5c907c1a6ab56bb7dc93b" style="position: relative; width: 100%; padding: 178.21782178217822% 0 0;"> <img id="thumb_67e5c907c1a6ab56bb7dc93b" src="https://images.converteai.net/faf9a9af-915e-461c-a560-2a0420abced6/players/67e5c907c1a6ab56bb7dc93b/thumbnail.jpg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: block;" alt="thumbnail"> <div id="backdrop_67e5c907c1a6ab56bb7dc93b" style=" -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px); position: absolute; top: 0; height: 100%; width: 100%; "></div> </div> <script type="text/javascript" id="scr_67e5c907c1a6ab56bb7dc93b"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/faf9a9af-915e-461c-a560-2a0420abced6/players/67e5c907c1a6ab56bb7dc93b/player.js", s.async=!0,document.head.appendChild(s); </script>
+   
+   <style>
+@keyframes pulse {
+0% {
+transform: scale(.9);
+}
+100% {
+transform: scale(1);
+}
+}
+.smartplayer-call-action--link {
+animation: pulse 1s infinite forwards alternate-reverse;
+}
+</style>
+    
+    <!-- TV Logos Section -->
+    <div class="atomicat-big-outer-container">
+      <div class="atomicat-outer-container atomicat-container-boxed">
+        <div class="atomicat-container atomicat-inner-container">
+          <div class="atomicat-big-outer-container" style="width: 100%;">
+            <div class="atomicat-outer-container atomicat-container-full-width">
+              <div class="atomicat-container atomicat-inner-container">
+                <div class="atomicat-component-container atomicat-relative">
+                  <div class="atomicat-element-container atomicat-relative atomicat-image">
+                    <img src="https://media.atomicatpages.net/u/fhSOeDcqOudeLRe4dqVr9TkkTiH2/Pictures/eILIMX9416540.png" alt="TV Logos" loading="eager" decoding="async">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Footer Section -->
+    <div class="atomicat-big-outer-container footer-section">
+      <div class="atomicat-outer-container atomicat-container-boxed">
+        <div class="atomicat-container atomicat-inner-container">
+          <div class="atomicat-big-outer-container" style="width: 100%;">
+            <div class="atomicat-outer-container atomicat-container-full-width">
+              <div class="atomicat-container atomicat-inner-container">
+                <!-- Copyright Text -->
+                <div class="atomicat-component-container atomicat-relative">
+                  <div class="atomicat-element-container atomicat-relative atomicat-text footer-text">
+                    <p>Copyright 2025 - Todos os direitos reservados.</p>
+                  </div>
+                </div>
+                
+                <!-- Footer Links -->
+                <div class="atomicat-big-outer-container">
+                  <div class="atomicat-outer-container atomicat-container-boxed">
+                    <div class="atomicat-container atomicat-inner-container footer-links">
+                      <div class="atomicat-component-container atomicat-relative">
+                        <div class="atomicat-element-container atomicat-relative atomicat-text footer-link">
+                          <a href="/termos"><p>Termos de Uso</p></a>
+                        </div>
+                      </div>
+                      <div class="atomicat-component-container atomicat-relative">
+                        <div class="atomicat-element-container atomicat-relative atomicat-text footer-link">
+                          <a href="/privacidade"><p>Política de Privacidade</p></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    // Update date
+    function updateDate() {
+      const today = new Date();
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      const formattedDate = today.toLocaleDateString('pt-BR', options);
+      document.getElementById('current-date').textContent = formattedDate;
+    }
+    
+    // Update viewer count
+    function updateViewerCount() {
+      const randomCount = Math.floor(Math.random() * 500) + 600;
+      document.getElementById('viewer-count').textContent = randomCount;
+    }
+    
+    // Initialize
+    document.addEventListener('DOMContentLoaded', function() {
+      updateDate();
+      updateViewerCount();
+      
+      // Update viewer count periodically
+      setInterval(updateViewerCount, 5000);
+    });
+  </script>
+</body>
+</html>
